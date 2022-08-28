@@ -3,8 +3,7 @@ name: Deploy
 on:
   push:
     branches:
-      - development
-      - main
+      - master
   pull_request:
 
 jobs:
@@ -18,6 +17,8 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v2
 
+      # Install AWS CLI command following
+      # - https://docs.aws.amazon.com/cli/latest/userguide/getting-started-install.html
       - name: Install AWS CLI and run a command
         run: |
           echo "----Get aws cli----"
